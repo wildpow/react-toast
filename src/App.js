@@ -1,11 +1,28 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import {useToast}  from './toast/context';
+import { useToast } from "./toast/context";
 
 function App() {
+  const successToast = {
+    title: "Added item to cart",
+
+    description: "You are winning at this game!",
+  };
+  const infoToast = {
+    title: "Added item to cart",
+    description: "Info about winning life",
+  };
+  const dangerToast = {
+    title: "Removed item to cart",
+    description: "Are you sure your not going to buy this?",
+  };
+  const warningToast = {
+    title: "misspelling",
+    description: "maybe you should learn how to spell you name?",
+  };
   const toast = useToast();
-  const showToast = () => toast.add('Added item to cart', 'success', 'You are winning at this game!');
+  const showToast = () => toast.add("warning", warningToast);
   return (
     <div className="App">
       <header className="App-header">
@@ -21,9 +38,7 @@ function App() {
         >
           Learn React
         </a>
-        <button onClick={showToast}>
-          toast
-        </button>
+        <button onClick={showToast}>toast</button>
       </header>
     </div>
   );

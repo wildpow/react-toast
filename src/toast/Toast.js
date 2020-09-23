@@ -1,15 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 function Toast({ remove, bgColor, icon, description, title }) {
-  const removeRef = useRef();
-  removeRef.current = remove;
+  // useEffect(() => {
+  //   const duration = 3000;
+  //   const id = setTimeout(() => remove(), duration);
 
-  useEffect(() => {
-    const duration = 5000;
-    const id = setTimeout(() => removeRef.current(), duration);
-
-    return () => clearTimeout(id);
-  }, []);
+  //   return () => clearTimeout(id);
+  // }, [remove]);
 
   return (
     <div className="toast" style={{ backgroundColor: bgColor }}>
@@ -18,13 +15,21 @@ function Toast({ remove, bgColor, icon, description, title }) {
       </div>
 
       <div>
-        <p className="notification-title">{title}</p>
+        <h5 className="notification-title">{title}</h5>
         <p className="notification-message">{description}</p>
       </div>
-
-      <button onClick={remove} className="toast__close-btn">
+      {/* <div className="toast__wrapper-btn"> */}
+      <button
+        onClick={remove}
+        className="toast__close-btn"
+        aria-expanded="false"
+        type="button"
+        aria-hidden="true"
+        focusable="false"
+      >
         x
       </button>
+      {/* </div> */}
     </div>
   );
 }
