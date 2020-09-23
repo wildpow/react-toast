@@ -5,27 +5,70 @@
 }
 
 .toast {
-  border: 2px solid transparent;
-  background-color: #fafafa;
-  border-radius: 4px;
-  max-width: 480px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
-  margin-top: 16px;
   display: flex;
+  background: #fff;
+  transition: 0.3s ease;
   position: relative;
-  cursor: pointer;
+  pointer-events: auto;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 30px;
+  margin-bottom: 15px;
+  width: 300px;
+  max-height: 100px;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 10px #999;
+  color: #000;
+  opacity: 0.9;
+  background-position: 15px;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 365px;
+  color: #fff;
+  padding: 20px 15px 10px 10px;
 }
 
-.toast__text {
+/* .toast__text {
   padding: 16px 24px;
   line-height: 1.4;
-}
+} */
 
 .toast__close-btn {
   border: none;
+  color: white;
   background-color: transparent;
-  font-size: 16px;
-  margin-top: 8px;
+  font-size: 26px;
+  /* margin-top: 8px;
   margin-right: 8px;
-  cursor: pointer;
+  cursor: pointer; */
+  /* float: right; */
+}
+
+.notification-image {
+  float: left;
+  margin-right: 15px;
+}
+.notification-image img {
+  width: 30px;
+  height: 30px;
+}
+
+.notification-title {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 6px;
+  width: 300px;
+  height: 18px;
+}
+
+.notification-message {
+  margin: 0;
+  text-align: left;
+  height: 18px;
+  margin-left: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

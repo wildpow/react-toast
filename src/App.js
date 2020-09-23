@@ -5,7 +5,7 @@ import {useToast}  from './toast/context';
 
 function App() {
   const toast = useToast();
-  const showToast = () => toast.add('Toast created from child component!');
+  const showToast = () => toast.add('Added item to cart', 'success', 'You are winning at this game!');
   return (
     <div className="App">
       <header className="App-header">
