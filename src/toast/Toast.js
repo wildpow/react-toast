@@ -4,12 +4,12 @@ function Toast({ remove, bgColor, icon, description, title }) {
   const removeRef = useRef();
   removeRef.current = remove;
 
-  // useEffect(() => {
-  //   const duration = 5000;
-  //   const id = setTimeout(() => removeRef.current(), duration);
+  useEffect(() => {
+    const duration = 5000;
+    const id = setTimeout(() => removeRef.current(), duration);
 
-  //   return () => clearTimeout(id);
-  // }, []);
+    return () => clearTimeout(id);
+  }, []);
 
   return (
     <div className="toast" style={{ backgroundColor: bgColor }}>
