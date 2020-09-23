@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import {useToast}  from './toast/context';
 
 function App() {
+  const toast = useToast();
+  const showToast = () => toast.add('Toast created from child component!');
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +21,9 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={showToast}>
+          toast
+        </button>
       </header>
     </div>
   );
